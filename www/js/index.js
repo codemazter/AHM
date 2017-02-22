@@ -298,6 +298,7 @@ var loadResultScreen = function () {
 
 var success = function (data) {
     log("success: " + JSON.stringify(data));
+    alert("success: " + JSON.stringify(data));
     if (typeof data === 'object') {
         if (data.id == 'mobileSDKWasValidated') {
             $("#progress_modal").toggleClass("hdn");
@@ -400,6 +401,7 @@ var success = function (data) {
 };
 var failure = function (data) {
     log("failure: " + JSON.stringify(data));
+    alert("failure: " + JSON.stringify(data));
     if (data.errorType) {
         if (data.id == "didFailWithError") {
             navigator.notification.alert(
@@ -586,6 +588,7 @@ var app = {
     // Application Constructor
     initialize: function () {
         log("initialize");
+        alert('initialize');
         this.bindEvents();
     },
     // Bind Event Listeners
@@ -594,6 +597,7 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function () {
         log("bindEvents");
+        alert("bindEvents");
         document.addEventListener('deviceready', this.onDeviceReady, false);
         document.addEventListener("resize", adjustCardHolder, false);
         window.addEventListener("resize", adjustCardHolder, false);
@@ -605,6 +609,7 @@ var app = {
     onDeviceReady: function () {
         try {
             log("onDeviceReady");
+            alert("onDeviceReady");
             checkConnection();
             // Custom Settings
             $('#progress_modal').nsProgress({
