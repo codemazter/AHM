@@ -562,10 +562,12 @@ var showCameraInterfaceDLBack = function () {
 
 var activateAction = function () {
 	log('activateAction');
+    alert('activateAction');
     AcuantMobileSDK.activateLicenseKey(success, failure, licenseKey);
 };
 var getLicenseKey = function () {
     log('getLicenseKey');
+    alert('getLicenseKey');
     licenseKey = $('#license-key').val();
     localStorage.setItem("license-key", licenseKey);
     AcuantMobileSDK.setLicenseKey(success, failure, licenseKey);
